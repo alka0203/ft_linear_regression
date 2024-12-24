@@ -6,10 +6,12 @@ def ft_gradient_descent(mileage, price, learning_rate):
 
     for i in range(1000):
         
+        # need to calculate cost function
+        
         # Update θ₀ and θ₁
         estimatePrice = theta[0] + (theta[1] * int(mileage[i]))
 
-        theta[0] = (learning_rate / m) * np.sum(estimatePrice - price[i])
-        theta[1] = (learning_rate / m) * np.sum((estimatePrice - price[i]) * mileage[i])
+        theta[0] -= (learning_rate / m) * np.sum(estimatePrice - price[i])
+        theta[1] -= (learning_rate / m) * np.sum((estimatePrice - price[i]) * mileage[i])
         
     return theta

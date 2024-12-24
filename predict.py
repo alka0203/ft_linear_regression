@@ -14,9 +14,7 @@ if inputValue.isdigit() == False:
     
 theta = train_model()
 
-print(theta)
-
 # need to specify data type from input to add
 estimatedPrice = theta[0] + (theta[1] * int(inputValue))
 
-print(estimatedPrice)
+print("ESTIMATED PRICE", estimatedPrice)
